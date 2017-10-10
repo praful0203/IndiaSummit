@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">India Summit</string>
+    <string name="title">Girlscript</string>
+    <string name="participate">Participant</string>
+    <string name="volunteer">Volunteer</string>
+    <string name="on21">21 on 21</string>
+    <string name="women">Women World Record</string>
+    <string name="title_activity_participant">ParticipantActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="name">Name:</string>
+    <string name="city">City:</string>
+    <string name="college_organization">College/Organization:</string>
+    <string name="mobiile_no">Mobiile No. :</string>
+    <string name="email_id">Email-id:</string>
+    <string name="q1_prtpnt">What are you expecting from GirlScript India Summit?</string>
+    <string name="q2_prtpnt">What all events have you attended earlier or organised (if any)?</string>
+    <string name="tech_skills">Rate your Technical Skills :</string>
+    <string name="leadership_skills">Rate your Leadership Skills :</string>
+    <string name="altitude">Where do you see yourself in next 5 years?</string>
+    <string name="will_you_join">Will you join us on these dates? (Yes, No, May be)</string>
+    <string name="btn_register">Register</string>
+    <string name="apply">Apply</string>
+    <string name="maybe">Maybe</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+</resources>
