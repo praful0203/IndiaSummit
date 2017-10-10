@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="5dp">
+        android:layout_margin="8dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -158,22 +158,27 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_margin="5dp"
+            android:id="@+id/rdGroup"
             android:gravity="center">
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/yes"
-                android:layout_margin="5dp"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/no"
-                android:layout_margin="5dp"/>
+                android:id="@+id/rbtnYes"
+                android:layout_weight="1"
+                android:layout_margin="2dp"/>
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/maybe"
-                android:layout_margin="5dp"/>
+                android:layout_weight="1"
+                android:layout_margin="2dp" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"
+                android:layout_weight="1"
+                android:layout_margin="2dp"/>
         </RadioGroup>
 
        <Button
