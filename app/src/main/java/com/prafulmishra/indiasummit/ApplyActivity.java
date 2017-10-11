@@ -45,6 +45,12 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
             }
         });
 
+        btnVolunteer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                volntrReg();
+            }
+        });
 
 
         imgQ1.setOnClickListener(new View.OnClickListener() {
@@ -76,12 +82,23 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
         });
     }
 
+
     private void prtpntReg() {
 
         Intent intent = new Intent(getApplicationContext(),ParticipantActivity.class);
         startActivity(intent);
 
     }
+
+
+    private void volntrReg() {
+
+        Intent intent = new Intent(getApplicationContext(),VolunteerActivity.class);
+        startActivity(intent);
+
+    }
+
+
 
     private void img1() {
         final AlertDialog alertDialog = new AlertDialog.Builder(ApplyActivity.this).create();
