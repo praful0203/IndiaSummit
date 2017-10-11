@@ -36,7 +36,9 @@ Some of the glimpse of the summit include:-\n\n
 6.Calling successful programmers , women etc. To share their views and success stories.\n\n
 7.Collecting Resume/CV of college students to match them with an internship.\n\n
 8.Witnessing a live world record.\n</string>
-
+    <string name="parti_short">Attend the Girlscript\'s 1st India Summit 2K17 at Ahmedabad!</string>
+    <string name="volun_short">Become a Volunteer and contribute to India\'s 1st Women-oriented fest!</string>
+    <string name="women_short">Be a part of World Record! Come and join with us! (Only for women)</string>
     <string name="participant">This is an Invite only event, this registration does not confirm your seats. After the application deadline, you will receive a confirmation mail from our side</string>
     <string name="volunteer_q1">Team you want to be a part of :</string>
     <string name="whatapp_no">Whatsapp number :</string>
@@ -48,4 +50,9 @@ Some of the glimpse of the summit include:-\n\n
     <string name="your_past_experience">Your Past Experience :</string>
     <string name="do_you_need_travel_allowance">Do you need Travel allowance ?</string>
     <string name="do_you_need_accomodation">Do you need Accommodation ?</string>
+    <string name="title_activity_twentyone">TwentyoneActivity</string>
+    <string name="twentyone">If you are under age of 21 and achieved something great, then nominate yourself!</string>
+    <string name="name_of_the_nominator">Name of The Nominator :</string>
+    <string name="name_of_the_nominee">Name of The Nominee :</string>
+    <string name="date_of_birth">Date of Birth :</string>
 </resources>
