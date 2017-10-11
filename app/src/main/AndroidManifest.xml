@@ -35,6 +35,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.prafulmishra.indiasummit.ApplyActivity" />
         </activity>
+        <activity
+            android:name=".TwentyoneActivity"
+            android:label="@string/title_activity_twentyone"
+            android:parentActivityName=".ApplyActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prafulmishra.indiasummit.ApplyActivity" />
+        </activity>
     </application>
 
 </manifest>

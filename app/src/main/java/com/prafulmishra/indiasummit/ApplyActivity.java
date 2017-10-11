@@ -59,6 +59,13 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
         });
 
 
+        btnOn21.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                twentyonReg();
+            }
+        });
+
         imgQ1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,6 +95,12 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
         });
     }
 
+    private void twentyonReg() {
+
+        Intent intent = new Intent(getApplicationContext(),TwentyoneActivity.class);
+        startActivity(intent);
+    }
+
 
     private void prtpntReg() {
 
@@ -113,7 +126,7 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
         alertDialog.setTitle("Participant");
 
         // Setting Dialog Message
-        alertDialog.setMessage("Attend the Girlscript\'s 1st India Summit 2K17 at Ahmedabad!");
+        alertDialog.setMessage(getString(R.string.parti_short));
 
         // Setting Icon to Dialog
         alertDialog.setIcon(R.drawable.button);
@@ -141,7 +154,7 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
         alertDialog.setTitle("Volunteer");
 
         // Setting Dialog Message
-        alertDialog.setMessage("Become a Volunteer and contribute to India's 1st Women-oriented fest!");
+        alertDialog.setMessage(getString(R.string.volun_short));
 
         // Setting Icon to Dialog
         alertDialog.setIcon(R.drawable.button);
@@ -169,7 +182,7 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
         alertDialog.setTitle("21 ON 21");
 
         // Setting Dialog Message
-        alertDialog.setMessage("If you are under age of 21 and achieved something great, then nominate yourself!");
+        alertDialog.setMessage(getString(R.string.twentyone));
 
         // Setting Icon to Dialog
         alertDialog.setIcon(R.drawable.button);
@@ -197,7 +210,7 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
         alertDialog.setTitle("Women World Record");
 
         // Setting Dialog Message
-        alertDialog.setMessage("Be a part of World Record! Come and join with us! (Only for women)");
+        alertDialog.setMessage(getString(R.string.women_short));
 
         // Setting Icon to Dialog
         alertDialog.setIcon(R.drawable.button);
