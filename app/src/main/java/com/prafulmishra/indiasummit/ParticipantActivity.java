@@ -20,7 +20,7 @@ public class ParticipantActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        btnApply = (Button)findViewById(R.id.btnApply);
+        btnApply = (Button)findViewById(R.id.btnApplypart);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/graveside.ttf");
         btnApply.setTypeface(typeface);
 
@@ -41,7 +41,7 @@ public class ParticipantActivity extends AppCompatActivity {
         alertDialog.setTitle("Participation Registration");
 
         // Setting Dialog Message
-        alertDialog.setMessage("This is an Invite only event, this registration does not confirm your seats. After the application deadline, you will receive a confirmation mail from our side");
+        alertDialog.setMessage(getString(R.string.participant));
 
         // Setting Icon to Dialog
         alertDialog.setIcon(R.drawable.button);

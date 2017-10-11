@@ -187,7 +187,7 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:background="@drawable/ripple_btnreg"
-           android:id="@+id/btnApply"
+           android:id="@+id/btnApplypart"
            android:text="@string/apply"
            android:textSize="20sp"
            android:layout_margin="10dp"

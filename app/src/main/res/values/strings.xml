@@ -10,7 +10,7 @@
     <string name="name">Name:</string>
     <string name="city">City:</string>
     <string name="college_organization">College/Organization:</string>
-    <string name="mobiile_no">Mobile No. :</string>
+    <string name="mobiile_no">Mobile No. : (Active Whatsapp)</string>
     <string name="email_id">Email-id:</string>
     <string name="q1_prtpnt">What are you expecting from GirlScript India Summit?</string>
     <string name="q2_prtpnt">What all events have you attended earlier or organised (if any)?</string>
@@ -23,4 +23,29 @@
     <string name="maybe">Maybe</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
+    <string name="title_activity_volunteer">VolunteerActivity</string>
+    <string name="volunteership">We are looking for volunteers for the most happening summit around the nation.
+Girlscript summit is a two day event  consisting of various learning sessions alongside fun filled activities and so on..
+The major aim behind this summit is to eradicate  gender inequality and empower women.
+Some of the glimpse of the summit include:-\n\n
+1. Various technical session by the industry experts.\n\n
+2. Providing a platform to students to interact with the MNC\'s.\n\n
+3. Showcasing the work- environment of the MNC.\n\n
+4. Fun thrilled competition and many more.\n\n
+5.Calling the best performs of our Code for freedom campaign to share their motivational ideas and rewarding them.\n\n
+6.Calling successful programmers , women etc. To share their views and success stories.\n\n
+7.Collecting Resume/CV of college students to match them with an internship.\n\n
+8.Witnessing a live world record.\n</string>
+
+    <string name="participant">This is an Invite only event, this registration does not confirm your seats. After the application deadline, you will receive a confirmation mail from our side</string>
+    <string name="volunteer_q1">Team you want to be a part of :</string>
+    <string name="whatapp_no">Whatsapp number :</string>
+    <string name="graphic_designing">Graphic Designing</string>
+    <string name="event_management">Event Management</string>
+    <string name="content_writing">Content Writing</string>
+    <string name="social_media_marketing">Social media Marketing</string>
+    <string name="hospitality_and_management">Hospitality and Management</string>
+    <string name="your_past_experience">Your Past Experience :</string>
+    <string name="do_you_need_travel_allowance">Do you need Travel allowance ?</string>
+    <string name="do_you_need_accomodation">Do you need Accommodation ?</string>
 </resources>
