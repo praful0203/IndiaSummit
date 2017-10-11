@@ -18,10 +18,16 @@ import android.widget.Toast;
 public class ApplyActivity extends AppCompatActivity {
 Button btnPrtpnt, btnVolunteer, btnOn21, btnWomen;
 ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
+    TextView lbl_appname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apply);
+
+        lbl_appname = (TextView)findViewById(R.id.lbl_appname);
+        Typeface myCustomFont = Typeface.createFromAsset(getAssets(),"fonts/gs_font.ttf");
+        lbl_appname.setTypeface(myCustomFont);
+
         btnPrtpnt = (Button)findViewById(R.id.btnPrtpnt);
         btnVolunteer = (Button)findViewById(R.id.btnVolunteer);
         btnOn21 = (Button)findViewById(R.id.btnOn21);
