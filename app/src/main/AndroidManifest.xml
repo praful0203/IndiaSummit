@@ -44,6 +44,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.prafulmishra.indiasummit.ApplyActivity" />
         </activity>
+        <activity
+            android:name=".WomenActivity"
+            android:label="@string/title_activity_scrolling"
+            android:parentActivityName=".ApplyActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prafulmishra.indiasummit.ApplyActivity" />
+        </activity>
     </application>
 
 </manifest>

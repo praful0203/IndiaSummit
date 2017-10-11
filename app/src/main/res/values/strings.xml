@@ -3,7 +3,7 @@
     <string name="title">Girlscript</string>
     <string name="participate">Participant</string>
     <string name="volunteer">Volunteer</string>
-    <string name="on21">21 on 21</string>
+    <string name="on21">21 on 21 Awards</string>
     <string name="women">Women World Record</string>
     <string name="title_activity_participant">ParticipantActivity</string>
     <string name="action_settings">Settings</string>
@@ -17,7 +17,7 @@
     <string name="tech_skills">Rate your Technical Skills :</string>
     <string name="leadership_skills">Rate your Leadership Skills :</string>
     <string name="altitude">Where do you see yourself in next 5 years?</string>
-    <string name="will_you_join">Will you join us on these dates? (Yes, No, May be)</string>
+    <string name="will_you_join">Will you join us on these dates?</string>
     <string name="btn_register">Register</string>
     <string name="apply">Apply</string>
     <string name="maybe">Maybe</string>
@@ -55,4 +55,20 @@ Some of the glimpse of the summit include:-\n\n
     <string name="name_of_the_nominator">Name of The Nominator :</string>
     <string name="name_of_the_nominee">Name of The Nominee :</string>
     <string name="date_of_birth">Date of Birth :</string>
+    <string name="select_date">Select Date</string>
+    <string name="achievements_till_2017">Tell us about your achievements till 2017 :</string>
+    <string name="proud_of">One thing which you have done this year, which you are proud of :</string>
+    <string name="getting_a_21">How getting a 21 Under 21 Award will help you in your life?</string>
+    <string name="drop_links_to_your_social_media_profiles_here">Drop links to your social media profiles here :</string>
+    <string name="please_include_the_names_of_2_people_their_contact_details_as_a_reference_for_this_award">Please include the names of 2 people, their contact details as a reference for this award</string>
+    <string name="presence">Will you be able to join us in Ahemdabad to receive your award?</string>
+    <string name="like_to_speak">Would you like to speak in our event. If you would like to speak then on what you would be talking about?</string>
+    <string name="message_to_youth">What is your opinion on Young India and their current situation?</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="women_info">Be a part of World Record! Come and join us! (Only for women)</string>
+    <string name="women_html">Do you know HTML?</string>
+    <string name="other_things">What all other things do you know?</string>
+    <string name="women_in_tech">How is to be a women in technology in India?</string>
+    <string name="do_you_need_any_kind_of_stipend">Do you need any kind of stipend?</string>
+    <string name="practice_before_event">Will you be able to come for attending any practice session/meeting before event?</string>
 </resources>

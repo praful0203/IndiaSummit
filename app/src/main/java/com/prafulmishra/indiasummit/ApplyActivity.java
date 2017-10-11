@@ -66,6 +66,14 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
             }
         });
 
+
+        btnWomen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                womenReg();
+            }
+        });
+
         imgQ1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,6 +101,12 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
                 img4();
             }
         });
+    }
+
+    private void womenReg() {
+
+        Intent intent = new Intent(getApplicationContext(),WomenActivity.class);
+        startActivity(intent);
     }
 
     private void twentyonReg() {
@@ -179,7 +193,7 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
         final AlertDialog alertDialog = new AlertDialog.Builder(ApplyActivity.this).create();
 
         // Setting Dialog Title
-        alertDialog.setTitle("21 ON 21");
+        alertDialog.setTitle("21 ON 21 Awards");
 
         // Setting Dialog Message
         alertDialog.setMessage(getString(R.string.twentyone));
