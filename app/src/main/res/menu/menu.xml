@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/nav_home"
+    android:title="@string/home"/>
+
+    <item android:id="@+id/nav_register"
+        android:title="@string/registration"/>
+    <item android:id="@+id/nav_contactus"
+        android:title="@string/contact_us"/>
+    <item android:id="@+id/nav_aboutus"
+        android:title="@string/about_us"/>
+    <item android:id="@+id/nav_ourteam"
+        android:title="@string/our_team"/>
+    <item android:id="@+id/nav_rate"
+        android:title="@string/rate_us"/>
+
+</menu>

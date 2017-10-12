@@ -1,33 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white"
+    android:id="@+id/drawerLayout1">
+
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu">
+
+    </android.support.design.widget.NavigationView>
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/white"
-    tools:context="com.prafulmishra.indiasummit.ApplyActivity">
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title"
-            android:gravity="left"
-            android:textSize="25sp"
-            android:paddingBottom="5dp"
-            android:textColor="@android:color/white"
-            android:id="@+id/lbl_appname"/>
-
-        </android.support.v7.widget.Toolbar>
+    android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -148,3 +139,4 @@
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
+</android.support.v4.widget.DrawerLayout>

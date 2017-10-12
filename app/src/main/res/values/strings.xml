@@ -71,4 +71,13 @@ Some of the glimpse of the summit include:-\n\n
     <string name="women_in_tech">How is to be a women in technology in India?</string>
     <string name="do_you_need_any_kind_of_stipend">Do you need any kind of stipend?</string>
     <string name="practice_before_event">Will you be able to come for attending any practice session/meeting before event?</string>
+    <string name="action_contactus">Contact us</string>
+    <string name="home">Home</string>
+    <string name="registration">Registration</string>
+    <string name="contact_us">Contact us</string>
+    <string name="about_us">About us</string>
+    <string name="our_team">Our Team</string>
+    <string name="rate_us">Rate us</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
