@@ -7,8 +7,13 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Message;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -19,14 +24,22 @@ public class ApplyActivity extends AppCompatActivity {
 Button btnPrtpnt, btnVolunteer, btnOn21, btnWomen;
 ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
     TextView lbl_appname;
+
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apply);
 
-        lbl_appname = (TextView)findViewById(R.id.lbl_appname);
-        Typeface myCustomFont = Typeface.createFromAsset(getAssets(),"fonts/gs_font.ttf");
-        lbl_appname.setTypeface(myCustomFont);
+        mDrawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout1);
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
+
+
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btnPrtpnt = (Button)findViewById(R.id.btnPrtpnt);
         btnVolunteer = (Button)findViewById(R.id.btnVolunteer);
@@ -43,6 +56,8 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
         btnVolunteer.setTypeface(typeface);
         btnOn21.setTypeface(typeface);
         btnWomen.setTypeface(typeface);
+
+
 
         btnPrtpnt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +116,16 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
                 img4();
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (mToggle.onOptionsItemSelected(item))
+        {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void womenReg() {

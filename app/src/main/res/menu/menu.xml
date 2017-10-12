@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/nav_home"
+    android:title="@string/home"
+    android:icon="@mipmap/ic_home_black_24dp"/>
+
+    <item android:id="@+id/nav_register"
+        android:title="@string/registration"
+        android:icon="@mipmap/ic_note_black_24dp"/>
+    <item android:id="@+id/nav_contactus"
+        android:title="@string/contact_us"
+        android:icon="@mipmap/ic_contact_mail_black_24dp"/>
+    <item android:id="@+id/nav_aboutus"
+        android:title="@string/about_us"
+        android:icon="@mipmap/ic_people_black_24dp"/>
+    <item android:id="@+id/nav_ourteam"
+        android:title="@string/our_team"
+        android:icon="@mipmap/ic_group_work_black_24dp"/>
+    <item android:id="@+id/nav_rate"
+        android:title="@string/rate_us"
+        android:icon="@mipmap/ic_rate_review_black_24dp"/>
+
+</menu>

@@ -8,21 +8,6 @@
     tools:context="com.prafulmishra.indiasummit.LoginActivity"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/action_color">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title"
-            android:gravity="left"
-            android:textSize="25sp"
-            android:paddingBottom="5dp"
-            android:textColor="@android:color/white"
-            android:id="@+id/lbl_appname"/>
-    </android.support.v7.widget.Toolbar>
 
     <RelativeLayout
         android:layout_width="match_parent"

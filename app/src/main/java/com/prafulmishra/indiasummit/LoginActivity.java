@@ -17,9 +17,8 @@ ImageButton btnSubmit;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-     lbl_appname = (TextView)findViewById(R.id.lbl_appname);
-        Typeface myCustomFont = Typeface.createFromAsset(getAssets(),"fonts/gs_font.ttf");
-        lbl_appname.setTypeface(myCustomFont);
+
+
         btnSubmit = (ImageButton)findViewById(R.id.imgGs);
 
 
