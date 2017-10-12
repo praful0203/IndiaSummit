@@ -11,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -27,7 +28,7 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-
+    private Toolbar mtoolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,9 @@ ImageButton imgQ1,imgQ2,imgQ3,imgQ4;
         mDrawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout1);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
 
+
+        mtoolbar = (Toolbar)findViewById(R.id.nav_action);
+        setSupportActionBar(mtoolbar);
 
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
