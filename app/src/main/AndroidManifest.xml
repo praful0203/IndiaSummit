@@ -25,7 +25,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ApplyActivity" />
         <activity
             android:name=".ParticipantActivity"
             android:label="@string/title_activity_participant"
@@ -62,7 +61,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.prafulmishra.indiasummit.ApplyActivity" />
         </activity>
-        <activity android:name=".AboutUs"></activity>
+        <activity android:name=".AboutUs" />
+        <activity
+            android:name=".ApplyActivity"
+            android:label="@string/title_activity_apply"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ContactUs" />
+        <activity android:name=".OurTeam" />
+        <activity android:name=".RateUs"></activity>
     </application>
 
 </manifest>
