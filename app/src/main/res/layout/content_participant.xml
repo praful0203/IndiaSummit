@@ -23,7 +23,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtName"
+            android:id="@+id/partpntName"
             android:layout_weight="1"
             android:inputType="textPersonName" />
 
@@ -174,11 +174,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/maybe"
                 android:layout_weight="1"
+                android:id="@+id/rdbtnMaybe"
                 android:layout_margin="2dp" />
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/no"
+                android:id="@+id/rdbtnNo"
                 android:layout_weight="1"
                 android:layout_margin="2dp"/>
         </RadioGroup>

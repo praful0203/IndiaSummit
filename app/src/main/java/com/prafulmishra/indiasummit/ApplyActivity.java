@@ -1,12 +1,14 @@
 package com.prafulmishra.indiasummit;
 
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.icu.text.StringPrepParseException;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,15 +19,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.morsebyte.shailesh.twostagerating.TwoStageRate;
+
+import static java.lang.Float.valueOf;
 
 public class ApplyActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Button btnPrtpnt, btnVolunteer, btnOn21, btnWomen;
     ImageButton imgQ1, imgQ2, imgQ3, imgQ4;
-    TextView nav_headtitle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +57,9 @@ public class ApplyActivity extends AppCompatActivity
         imgQ3 = (ImageButton) findViewById(R.id.imgQ3);
         imgQ4 = (ImageButton) findViewById(R.id.imgQ4);
 
+        Typeface blockFonts = Typeface.createFromAsset(getAssets(),"fonts/gs_font.ttf");
+        TextView txtSampleTxt = (TextView) findViewById(R.id.txtAppname);
+        txtSampleTxt.setTypeface(blockFonts);
 
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/graveside.ttf");
         btnPrtpnt.setTypeface(typeface);
@@ -292,6 +303,7 @@ public class ApplyActivity extends AppCompatActivity
         // Showing Alert Message
         alertDialog.show();
 
+
     }
 
 
@@ -304,11 +316,10 @@ public class ApplyActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             Intent i = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(i);
-            Toast.makeText(ApplyActivity.this, "Home", Toast.LENGTH_SHORT).show();
+
         } else if (id == R.id.nav_aboutus) {
             Intent i = new Intent(getApplicationContext(), AboutUs.class);
             startActivity(i);
-            Toast.makeText(ApplyActivity.this, "About us", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_contactus) {
             Intent i = new Intent(getApplicationContext(), ContactUs.class);
@@ -316,13 +327,21 @@ public class ApplyActivity extends AppCompatActivity
             Toast.makeText(ApplyActivity.this, "Contact Us", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_ourteam) {
-            Intent i = new Intent(getApplicationContext(), OurTeam.class);
-            startActivity(i);
+            //Intent i = new Intent(getApplicationContext(), OurTeam.class);
+            //startActivity(i);
             Toast.makeText(ApplyActivity.this, "Our Team", Toast.LENGTH_SHORT).show();
+
         } else if (id == R.id.nav_rate) {
-            Intent i = new Intent(getApplicationContext(), RateUs.class);
-            startActivity(i);
-            Toast.makeText(ApplyActivity.this, "Rate Us", Toast.LENGTH_SHORT).show();
+           try {
+               startActivity(new Intent(Intent.ACTION_VIEW,
+                       Uri.parse("market://details?id=santase.radefffactory")));
+           }
+           catch (ActivityNotFoundException e)
+           {
+               startActivity(new Intent(Intent.ACTION_VIEW,
+                       Uri.parse("https://play.google.com/store/app/details?id=santase.radefffactory")));
+           }
+
         } else if (id == R.id.nav_register) {
             Intent i = new Intent(getApplicationContext(), ApplyActivity.class);
             startActivity(i);
@@ -333,6 +352,5 @@ public class ApplyActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 
 }
