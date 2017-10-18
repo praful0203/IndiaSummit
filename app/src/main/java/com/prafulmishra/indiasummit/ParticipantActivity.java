@@ -88,7 +88,6 @@ public class ParticipantActivity extends AppCompatActivity {
         next_5years = txtAltitude.getText().toString();
         tech_skills = rtTech.getRating();
         lead_skills = rtLead.getRating();
-        String category = "Participant";
 
         boolean failFlag = false;
 
