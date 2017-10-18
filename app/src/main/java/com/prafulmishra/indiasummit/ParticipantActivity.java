@@ -10,19 +10,51 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 public class ParticipantActivity extends AppCompatActivity {
     Button btnApply;
-
+    EditText partpntName,txtCity,txtCol_org,txtMob,txtMail,txtExpect,txtEvent,txtAltitude;
+    RatingBar rtTech,rtLead;
+    RadioGroup rdGroup;
+    RadioButton rbtnYes,rdbtnMaybe,rdbtnNo;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_participant);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        partpntName = (EditText)findViewById(R.id.partpntName);
+        txtCity = (EditText)findViewById(R.id.txtCity);
+        txtCol_org = (EditText)findViewById(R.id.txtCol_org);
+        txtMob = (EditText)findViewById(R.id.txtMob);
+        txtMail = (EditText)findViewById(R.id.txtMail);
+        txtExpect = (EditText)findViewById(R.id.txtExpect);
+        txtEvent = (EditText)findViewById(R.id.txtEvent);
+        txtAltitude = (EditText)findViewById(R.id.txtAltitude);
+
+        rdGroup = (RadioGroup)findViewById(R.id.rdGroup);
+        rbtnYes = (RadioButton)findViewById(R.id.rbtnYes);
+        rdbtnMaybe = (RadioButton)findViewById(R.id.rdbtnMaybe);
+        rdbtnNo = (RadioButton)findViewById(R.id.rdbtnNo);
+
+        rtLead = (RatingBar)findViewById(R.id.rtLead);
+        rtTech = (RatingBar)findViewById(R.id.rtTech);
         btnApply = (Button)findViewById(R.id.btnApplypart);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/graveside.ttf");
         btnApply.setTypeface(typeface);
+
+        btnApply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ParticipantActivity.this, "Rating :"+rtTech.getRating(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

@@ -68,7 +68,6 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".ContactUs" />
         <activity android:name=".OurTeam" />
-        <activity android:name=".RateUs"></activity>
     </application>
 
 </manifest>
