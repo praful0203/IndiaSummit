@@ -171,17 +171,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:id="@+id/rgTwentyone"
             android:layout_margin="10dp">
             <android.support.v7.widget.AppCompatRadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="rbClicktwenty"
                 android:id="@+id/rdbtnYespresence"
                 android:text="@string/yes"/>
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="rbClicktwenty"
                 android:id="@+id/rdbtnNopresence"
                 android:text="@string/no"/>
         </RadioGroup>
