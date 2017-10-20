@@ -2,8 +2,14 @@ package com.prafulmishra.indiasummit;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.support.annotation.IntegerRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -21,13 +27,21 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.prafulmishra.indiasummit.data.Participant;
+import com.taishi.flipprogressdialog.FlipProgressDialog;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ParticipantActivity extends AppCompatActivity {
 
+    List<Integer> ImageList = new ArrayList<>();
     Button btnApply;
     EditText partpntName,txtCity,txtCol_org,txtMob,txtMail,txtExpect,txtEvent,txtAltitude;
     RatingBar rtTech,rtLead;
     RadioGroup rdGroup;
+    Handler mHandler;
     RadioButton rb;
     String name,city,college_org,mobile,mailid,expect,events_attended,next_5years,attend_event;
     Float tech_skills,lead_skills;
@@ -52,6 +66,10 @@ public class ParticipantActivity extends AppCompatActivity {
 
         rdGroup = (RadioGroup)findViewById(R.id.rdGroup);
 
+        ImageList.add(R.drawable.gs_progress);
+        ImageList.add(R.drawable.gs_progress1);
+
+
 
         rtLead = (RatingBar)findViewById(R.id.rtLead);
         rtTech = (RatingBar)findViewById(R.id.rtTech);
@@ -59,10 +77,20 @@ public class ParticipantActivity extends AppCompatActivity {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/graveside.ttf");
         btnApply.setTypeface(typeface);
 
+        mHandler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(Message message) {
+                // This is where you do your work in the UI thread.
+                // Your worker tells you in the message what to do.
+                Toast.makeText(ParticipantActivity.this, "Registration Successful!", Toast.LENGTH_SHORT).show();
+            }
+        };
+
         btnApply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getTextData();
+               // showFlipProgressDialog();
                // Toast.makeText(ParticipantActivity.this, name+" "+city+" "+college_org+" "+mobile+" "+mailid+" "+expect+" "+events_attended+" "+next_5years+" "+attend_event+" "+tech_skills+" "+lead_skills , Toast.LENGTH_SHORT).show();
             }
         });
@@ -76,6 +104,8 @@ public class ParticipantActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+
 
     private void getTextData() {
         name = partpntName.getText().toString();
@@ -135,10 +165,10 @@ public class ParticipantActivity extends AppCompatActivity {
         }
         // if all are fine
         if (!failFlag) {
-           String id = databaseParticipant.push().getKey();
+            showFlipProgressDialog();
+            String id = databaseParticipant.push().getKey();
             Participant participant = new Participant(name,city,college_org,mobile,mailid,expect,events_attended,tech_skills,lead_skills,next_5years,attend_event);
             databaseParticipant.child(id).setValue(participant);
-            Toast.makeText(this, "Registration Done!\nFor further queries visit https://gsindiasummit.com", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -170,6 +200,28 @@ public class ParticipantActivity extends AppCompatActivity {
 
     }
 
+    private void showFlipProgressDialog() {
+        final FlipProgressDialog flip = new FlipProgressDialog();
+        flip.setImageList(ImageList);
+        flip.setBackgroundAlpha(1.0f);
+        flip.setBackgroundColor(Color.parseColor("#FFDD2C00"));
+        flip.setDimAmount(0.8f);
+        flip.setCancelable(false);
+        flip.setCornerRadius(200);
+        flip.setDuration(800);
+        flip.show(getFragmentManager(),"");
+        long delayInMillis = 5000;
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                flip.dismiss();
+                Message message = mHandler.obtainMessage();
+                message.sendToTarget();
+            }
+        }, delayInMillis);
+    }
+
     public void rbClick(View v)
     {
         int rbId = rdGroup.getCheckedRadioButtonId();
@@ -184,4 +236,5 @@ public class ParticipantActivity extends AppCompatActivity {
             return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
         }
     }
+
 }
