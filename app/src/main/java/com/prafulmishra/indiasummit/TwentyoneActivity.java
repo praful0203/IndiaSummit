@@ -90,6 +90,7 @@ Button btnApply,btnSetDate;
             @Override
             public void onClick(View v) {
                 getData21();
+
             }
         });
     }
@@ -171,7 +172,6 @@ Button btnApply,btnSetDate;
             txtMessagetoYouth.setError( "Field cannot be empty" );
         }
         // if all are fine
-        //TODO: Change everything from here
         if (!failFlag) {
             String id = databaseTwentyone.push().getKey();
             Twentyone twentyone = new Twentyone(dob,nominator,nominee,city,mobile_21,mailid,achieve,proudyear,ifget21,social_link,references,speakat_event,messageto_youth,attend_event);
