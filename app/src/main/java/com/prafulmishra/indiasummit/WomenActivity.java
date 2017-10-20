@@ -2,6 +2,7 @@ package com.prafulmishra.indiasummit;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.prafulmishra.indiasummit.data.Participant;
@@ -37,14 +39,14 @@ import java.util.regex.Pattern;
 public class WomenActivity extends AppCompatActivity {
 Button btnApply;
     EditText txtName,txtCity,txtCol_org,txtMob,txtMail,txtOtherskill,txtWomenintech;
-    String name,city,col_org,mobile_no,mail_id,other_skills,word_aboutwitech,html_knowledge,join_indiasummi,practice,stipend;
+    String name,city,col_org,mobile_no,mail_id,other_skills,word_aboutwitech,html_knowledge,join_indiasummi,practice,stipend,uid="";
     float tech_skills;
     RadioGroup rdGroupHtml,rdGroupdates,rdGroupPractice,rdGroupStipend;
     RatingBar rtTechskills;
     List<Integer> ImageList = new ArrayList<>();
     Handler mHandler;
-
-    DatabaseReference databaseWomen;
+    private FirebaseAuth firebaseAuth;
+    DatabaseReference databaseWomen,databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +73,9 @@ Button btnApply;
         rdGroupdates = (RadioGroup)findViewById(R.id.rgdates);
         rdGroupPractice = (RadioGroup)findViewById(R.id.rgPractice);
         rdGroupStipend = (RadioGroup)findViewById(R.id.rgStipend);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("women_in_tech");
+        firebaseAuth = FirebaseAuth.getInstance();
 
         mHandler = new Handler(Looper.getMainLooper()) {
             @Override
@@ -161,9 +166,9 @@ Button btnApply;
         // if all are fine
         if (!failFlag) {
             showFlipProgressDialog();
-            String id = databaseWomen.push().getKey();
+            uid = firebaseAuth.getCurrentUser().getUid();
             WomenInTech womenInTech = new WomenInTech(name,city,col_org,mobile_no,mail_id,other_skills,word_aboutwitech,html_knowledge,join_indiasummi,practice,stipend,tech_skills);
-            databaseWomen.child(id).setValue(womenInTech);
+            databaseWomen.child(uid).child(womenInTech.getMobile_no()).setValue(womenInTech);
         }
     }
 
@@ -213,6 +218,8 @@ Button btnApply;
                 flip.dismiss();
                 Message message = mHandler.obtainMessage();
                 message.sendToTarget();
+                Intent intent = new Intent(getApplicationContext(),ApplyActivity.class);
+                startActivity(intent);
             }
         }, delayInMillis);
     }

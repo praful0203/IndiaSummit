@@ -2,6 +2,7 @@ package com.prafulmishra.indiasummit;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
@@ -24,6 +25,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.prafulmishra.indiasummit.data.Participant;
@@ -43,10 +45,11 @@ public class ParticipantActivity extends AppCompatActivity {
     RadioGroup rdGroup;
     Handler mHandler;
     RadioButton rb;
-    String name,city,college_org,mobile,mailid,expect,events_attended,next_5years,attend_event;
+    String name,city,college_org,mobile,mailid,expect,events_attended,next_5years,attend_event,uid=" ";
     Float tech_skills,lead_skills;
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference databaseReference,databaseParticipant;
 
-   DatabaseReference databaseParticipant;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_participant);
@@ -76,6 +79,9 @@ public class ParticipantActivity extends AppCompatActivity {
         btnApply = (Button)findViewById(R.id.btnApplypart);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/graveside.ttf");
         btnApply.setTypeface(typeface);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("participants");
+        firebaseAuth = FirebaseAuth.getInstance();
 
         mHandler = new Handler(Looper.getMainLooper()) {
             @Override
@@ -165,9 +171,9 @@ public class ParticipantActivity extends AppCompatActivity {
         // if all are fine
         if (!failFlag) {
             showFlipProgressDialog();
-            String id = databaseParticipant.push().getKey();
+            uid = firebaseAuth.getCurrentUser().getUid();
             Participant participant = new Participant(name,city,college_org,mobile,mailid,expect,events_attended,tech_skills,lead_skills,next_5years,attend_event);
-            databaseParticipant.child(id).setValue(participant);
+            databaseParticipant.child(uid).child(participant.getMobile()).setValue(participant);
         }
     }
 
@@ -217,6 +223,8 @@ public class ParticipantActivity extends AppCompatActivity {
                 flip.dismiss();
                 Message message = mHandler.obtainMessage();
                 message.sendToTarget();
+                Intent intent = new Intent(getApplicationContext(),ApplyActivity.class);
+                startActivity(intent);
             }
         }, delayInMillis);
     }

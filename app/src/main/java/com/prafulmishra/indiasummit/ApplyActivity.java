@@ -7,6 +7,8 @@ import android.graphics.Typeface;
 import android.icu.text.StringPrepParseException;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,10 +23,12 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.morsebyte.shailesh.twostagerating.TwoStageRate;
 
 import static java.lang.Float.valueOf;
@@ -33,6 +37,15 @@ public class ApplyActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Button btnPrtpnt, btnVolunteer, btnOn21, btnWomen;
     ImageButton imgQ1, imgQ2, imgQ3, imgQ4;
+    FirebaseAuth mAuth;
+    FirebaseAuth.AuthStateListener mAuthListener;
+    LinearLayout loginlayout;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +53,18 @@ public class ApplyActivity extends AppCompatActivity
         setContentView(R.layout.activity_apply);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if (firebaseAuth.getCurrentUser() == null)
+                {
+                    Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                    startActivity(intent);
+                }
+            }
+        };
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -114,23 +139,26 @@ public class ApplyActivity extends AppCompatActivity
         });
     }
 
-
+    long back_pressed_time,PERIOD=2000;
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            if (back_pressed_time + PERIOD > System.currentTimeMillis()) super.onBackPressed();
+            else
+                Toast.makeText(getBaseContext(), "Press once again to exit!", Toast.LENGTH_SHORT).show();
+            back_pressed_time = System.currentTimeMillis();
         }
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.apply, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -263,11 +291,7 @@ public class ApplyActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-            startActivity(i);
-
-        } else if (id == R.id.nav_aboutus) {
+       if (id == R.id.nav_aboutus) {
             Intent i = new Intent(getApplicationContext(), AboutUs.class);
             startActivity(i);
 
@@ -292,15 +316,17 @@ public class ApplyActivity extends AppCompatActivity
                        Uri.parse("https://play.google.com/store/app/details?id=santase.radefffactory")));
            }
 
-        } else if (id == R.id.nav_register) {
-            Intent i = new Intent(getApplicationContext(), ApplyActivity.class);
-            startActivity(i);
-            Toast.makeText(ApplyActivity.this, "Register", Toast.LENGTH_SHORT).show();
+        }
+        else if (id == R.id.nav_logout) {
+           mAuth.signOut();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    boolean doubleBackToExitPressedOnce;
+
 
 }
