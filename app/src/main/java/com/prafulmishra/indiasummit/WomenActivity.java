@@ -63,7 +63,6 @@ Button btnApply;
             @Override
             public void onClick(View v) {
                 getDataWomen();
-               Toast.makeText(WomenActivity.this, name+" "+city+" "+col_org+" "+mobile_no+" "+mail_id+" "+other_skills+" "+word_aboutwitech+" "+tech_skills+" "+html_knowledge+" "+stipend+" "+practice+" "+join_indiasummi, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -130,6 +129,7 @@ Button btnApply;
             String id = databaseWomen.push().getKey();
             WomenInTech womenInTech = new WomenInTech(name,city,col_org,mobile_no,mail_id,other_skills,word_aboutwitech,html_knowledge,join_indiasummi,practice,stipend,tech_skills);
             databaseWomen.child(id).setValue(womenInTech);
+            Toast.makeText(this, "Registration Done!\nFor further queries visit https://gsindiasummit.com", Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -2,6 +2,7 @@ package com.prafulmishra.indiasummit;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.webkit.WebView;
 
 public class OurTeam extends AppCompatActivity {
 
@@ -9,5 +10,9 @@ public class OurTeam extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_our_team);
+        String url = "https://gsindiasummit.com/";
+        WebView view = (WebView)this.findViewById(R.id.webview);
+        view.getSettings().setJavaScriptEnabled(true);
+        view.loadUrl(url);
     }
 }

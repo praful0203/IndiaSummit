@@ -176,6 +176,7 @@ Button btnApply,btnSetDate;
             String id = databaseTwentyone.push().getKey();
             Twentyone twentyone = new Twentyone(dob,nominator,nominee,city,mobile_21,mailid,achieve,proudyear,ifget21,social_link,references,speakat_event,messageto_youth,attend_event);
             databaseTwentyone.child(id).setValue(twentyone);
+            Toast.makeText(this, "Registration Done!\nFor further queries visit https://gsindiasummit.com", Toast.LENGTH_SHORT).show();
         }
     }
 
