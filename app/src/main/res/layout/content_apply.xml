@@ -42,34 +42,7 @@
                 android:id="@+id/imgQ1" />
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="20dp"
-            android:layout_marginTop="5dp">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/volunteer"
-                android:id="@+id/btnVolunteer"
-                android:textColor="@android:color/white"
-                android:textSize="17sp"
-                android:elevation="6dp"
-                android:background="@drawable/ripple_btnforms"
-                android:layout_marginRight="5dp"
-                android:layout_weight="0.2" />
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/question"
-                android:elevation="6dp"
-                android:backgroundTint="@android:color/white"
-                android:scaleType="centerCrop"
-                android:id="@+id/imgQ2"/>
 
-        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
