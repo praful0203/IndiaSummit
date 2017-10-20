@@ -131,6 +131,7 @@ public class ParticipantActivity extends AppCompatActivity {
            String id = databaseParticipant.push().getKey();
             Participant participant = new Participant(name,city,college_org,mobile,mailid,expect,events_attended,tech_skills,lead_skills,next_5years,attend_event);
             databaseParticipant.child(id).setValue(participant);
+            Toast.makeText(this, "Registration Done!\nFor further queries visit https://gsindiasummit.com", Toast.LENGTH_SHORT).show();
         }
     }
 

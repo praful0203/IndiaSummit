@@ -327,8 +327,8 @@ public class ApplyActivity extends AppCompatActivity
             Toast.makeText(ApplyActivity.this, "Contact Us", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_ourteam) {
-            //Intent i = new Intent(getApplicationContext(), OurTeam.class);
-            //startActivity(i);
+            Intent i = new Intent(getApplicationContext(), OurTeam.class);
+            startActivity(i);
             Toast.makeText(ApplyActivity.this, "Our Team", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_rate) {

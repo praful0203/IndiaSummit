@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "590651686906",
+    "firebase_url": "https://indiasummit-12536.firebaseio.com",
+    "project_id": "indiasummit-12536",
+    "storage_bucket": "indiasummit-12536.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590651686906:android:0db7a22ae11a87b8",
+        "android_client_info": {
+          "package_name": "com.prafulmishra.indiasummit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "590651686906-6ib9pvdnfkg0vcme4c38gfgk7fjmgduf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.prafulmishra.indiasummit",
+            "certificate_hash": "66a7b440cb7c5d5ad31208a82dd088b30d71aa0c"
+          }
+        },
+        {
+          "client_id": "590651686906-59s12t3rcs501dok1vesliqhi3eqtpu6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMn7P8EBbaZmskHjMX5_jmEZbgBZOy7AM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "590651686906-59s12t3rcs501dok1vesliqhi3eqtpu6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
