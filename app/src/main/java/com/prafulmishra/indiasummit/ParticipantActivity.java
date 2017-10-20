@@ -82,7 +82,7 @@ public class ParticipantActivity extends AppCompatActivity {
             public void handleMessage(Message message) {
                 // This is where you do your work in the UI thread.
                 // Your worker tells you in the message what to do.
-                Toast.makeText(ParticipantActivity.this, "Registration Successful!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ParticipantActivity.this, "Registration Successful !\nFor further queries visit https://gsindiasummit.com", Toast.LENGTH_LONG).show();
             }
         };
 
@@ -90,7 +90,6 @@ public class ParticipantActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 getTextData();
-               // showFlipProgressDialog();
                // Toast.makeText(ParticipantActivity.this, name+" "+city+" "+college_org+" "+mobile+" "+mailid+" "+expect+" "+events_attended+" "+next_5years+" "+attend_event+" "+tech_skills+" "+lead_skills , Toast.LENGTH_SHORT).show();
             }
         });

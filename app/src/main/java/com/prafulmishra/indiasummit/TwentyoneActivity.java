@@ -4,9 +4,13 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -23,17 +27,25 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.prafulmishra.indiasummit.data.Twentyone;
+import com.taishi.flipprogressdialog.FlipProgressDialog;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static com.prafulmishra.indiasummit.R.id.rdGroup;
 import static com.prafulmishra.indiasummit.R.id.txtCity;
 
 public class TwentyoneActivity extends AppCompatActivity {
-Button btnApply,btnSetDate;
 
+    Button btnApply,btnSetDate;
+    List<Integer> ImageList = new ArrayList<>();
     EditText txtNominator,txtNominee,txtCity21,txtMob,txtMail,txtAchieve,txtProudyear,txtGet21,txtSociallinks,txtReference,txtSpeak,txtMessagetoYouth;
     String dob,nominator,nominee,city,mobile_21,mailid,achieve,proudyear,ifget21,social_link,references,speakat_event,messageto_youth,attend_event;
     RadioGroup rg21;
     RadioButton rbutton;
+    Handler mHandler;
     DatabaseReference databaseTwentyone;
    int year, month, day;
     static final int DIALOG_ID = 0;
@@ -45,6 +57,9 @@ Button btnApply,btnSetDate;
         setSupportActionBar(toolbar);
 
         databaseTwentyone = FirebaseDatabase.getInstance().getReference("twentyone");
+
+        ImageList.add(R.drawable.gs_progress);
+        ImageList.add(R.drawable.gs_progress1);
 
         btnSetDate = (Button)findViewById(R.id.btnSetDate);
         btnApply = (Button)findViewById(R.id.btnApplytwenty);
@@ -64,6 +79,7 @@ Button btnApply,btnSetDate;
         txtReference = (EditText)findViewById(R.id.txtReference);
         txtSpeak = (EditText)findViewById(R.id.txtSpeak);
         txtMessagetoYouth = (EditText)findViewById(R.id.txtMessagetoYouth);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +101,16 @@ Button btnApply,btnSetDate;
                 showDialog(DIALOG_ID);
             }
         });
+
+
+        mHandler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(Message message) {
+                // This is where you do your work in the UI thread.
+                // Your worker tells you in the message what to do.
+                Toast.makeText(TwentyoneActivity.this, "Registration Successful !\nFor further queries visit https://gsindiasummit.com", Toast.LENGTH_LONG).show();
+            }
+        };
 
         btnApply.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,12 +211,13 @@ Button btnApply,btnSetDate;
         }
         // if all are fine
         if (!failFlag) {
+            showFlipProgressDialog();
             String id = databaseTwentyone.push().getKey();
             Twentyone twentyone = new Twentyone(dob,nominator,nominee,city,mobile_21,mailid,achieve,proudyear,ifget21,social_link,references,speakat_event,messageto_youth,attend_event);
             databaseTwentyone.child(id).setValue(twentyone);
-            Toast.makeText(this, "Registration Done!\nFor further queries visit https://gsindiasummit.com", Toast.LENGTH_SHORT).show();
         }
     }
+
 
 
 
@@ -242,6 +269,28 @@ Button btnApply,btnSetDate;
 
         // Showing Alert Message
         alertDialog.show();
+    }
+
+    private void showFlipProgressDialog() {
+        final FlipProgressDialog flip = new FlipProgressDialog();
+        flip.setImageList(ImageList);
+        flip.setBackgroundAlpha(1.0f);
+        flip.setBackgroundColor(Color.parseColor("#FFDD2C00"));
+        flip.setDimAmount(0.8f);
+        flip.setCancelable(false);
+        flip.setCornerRadius(200);
+        flip.setDuration(800);
+        flip.show(getFragmentManager(),"");
+        long delayInMillis = 5000;
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                flip.dismiss();
+                Message message = mHandler.obtainMessage();
+                message.sendToTarget();
+            }
+        }, delayInMillis);
     }
 
     public void rbClicktwenty(View view) {
