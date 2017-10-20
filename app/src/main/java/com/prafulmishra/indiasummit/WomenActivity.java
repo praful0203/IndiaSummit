@@ -2,8 +2,12 @@ package com.prafulmishra.indiasummit;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +25,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.prafulmishra.indiasummit.data.Participant;
 import com.prafulmishra.indiasummit.data.WomenInTech;
+import com.taishi.flipprogressdialog.FlipProgressDialog;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,6 +41,8 @@ Button btnApply;
     float tech_skills;
     RadioGroup rdGroupHtml,rdGroupdates,rdGroupPractice,rdGroupStipend;
     RatingBar rtTechskills;
+    List<Integer> ImageList = new ArrayList<>();
+    Handler mHandler;
 
     DatabaseReference databaseWomen;
     @Override
@@ -53,10 +64,22 @@ Button btnApply;
         txtOtherskill = (EditText) findViewById(R.id.txtOtherskill);
         txtWomenintech = (EditText) findViewById(R.id.txtWomenintech);
 
+        ImageList.add(R.drawable.gs_progress);
+        ImageList.add(R.drawable.gs_progress1);
+
         rdGroupHtml = (RadioGroup)findViewById(R.id.rgHtml);
         rdGroupdates = (RadioGroup)findViewById(R.id.rgdates);
         rdGroupPractice = (RadioGroup)findViewById(R.id.rgPractice);
         rdGroupStipend = (RadioGroup)findViewById(R.id.rgStipend);
+
+        mHandler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(Message message) {
+                // This is where you do your work in the UI thread.
+                // Your worker tells you in the message what to do.
+                Toast.makeText(WomenActivity.this, "Registration Successful !\nFor further queries visit https://gsindiasummit.com", Toast.LENGTH_LONG).show();
+            }
+        };
 
         btnApply = (Button)findViewById(R.id.btnApplywomen);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/graveside.ttf");
@@ -137,10 +160,10 @@ Button btnApply;
         }
         // if all are fine
         if (!failFlag) {
+            showFlipProgressDialog();
             String id = databaseWomen.push().getKey();
             WomenInTech womenInTech = new WomenInTech(name,city,col_org,mobile_no,mail_id,other_skills,word_aboutwitech,html_knowledge,join_indiasummi,practice,stipend,tech_skills);
             databaseWomen.child(id).setValue(womenInTech);
-            Toast.makeText(this, "Registration Done!\nFor further queries visit https://gsindiasummit.com", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -170,6 +193,28 @@ Button btnApply;
         // Showing Alert Message
         alertDialog.show();
 
+    }
+
+    private void showFlipProgressDialog() {
+        final FlipProgressDialog flip = new FlipProgressDialog();
+        flip.setImageList(ImageList);
+        flip.setBackgroundAlpha(1.0f);
+        flip.setBackgroundColor(Color.parseColor("#FFDD2C00"));
+        flip.setDimAmount(0.8f);
+        flip.setCancelable(false);
+        flip.setCornerRadius(200);
+        flip.setDuration(800);
+        flip.show(getFragmentManager(),"");
+        long delayInMillis = 5000;
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                flip.dismiss();
+                Message message = mHandler.obtainMessage();
+                message.sendToTarget();
+            }
+        }, delayInMillis);
     }
 
     public void rbClickJoinIS(View v)
