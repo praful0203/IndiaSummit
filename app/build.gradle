@@ -29,6 +29,7 @@ dependencies {
     compile 'com.android.support:design:26.+'
     compile 'com.morsebyte.shailesh.twostagerating:TwoStageRate:2.0'
     compile 'com.google.firebase:firebase-database:10.0.1'
+    compile 'com.taishi-y:flipprogressdialog:0.1.0'
     testCompile 'junit:junit:4.12'
 }
 
