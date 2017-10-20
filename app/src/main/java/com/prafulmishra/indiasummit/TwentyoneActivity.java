@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.icu.util.Calendar;
@@ -24,6 +25,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.prafulmishra.indiasummit.data.Twentyone;
@@ -42,11 +44,12 @@ public class TwentyoneActivity extends AppCompatActivity {
     Button btnApply,btnSetDate;
     List<Integer> ImageList = new ArrayList<>();
     EditText txtNominator,txtNominee,txtCity21,txtMob,txtMail,txtAchieve,txtProudyear,txtGet21,txtSociallinks,txtReference,txtSpeak,txtMessagetoYouth;
-    String dob,nominator,nominee,city,mobile_21,mailid,achieve,proudyear,ifget21,social_link,references,speakat_event,messageto_youth,attend_event;
+    String uid=" ",dob,nominator,nominee,city,mobile_21,mailid,achieve,proudyear,ifget21,social_link,references,speakat_event,messageto_youth,attend_event;
     RadioGroup rg21;
     RadioButton rbutton;
     Handler mHandler;
-    DatabaseReference databaseTwentyone;
+    private FirebaseAuth firebaseAuth;
+    DatabaseReference databaseTwentyone,databaseReference;
    int year, month, day;
     static final int DIALOG_ID = 0;
     @Override
@@ -102,6 +105,8 @@ public class TwentyoneActivity extends AppCompatActivity {
             }
         });
 
+        databaseReference = FirebaseDatabase.getInstance().getReference("twentyone");
+        firebaseAuth = FirebaseAuth.getInstance();
 
         mHandler = new Handler(Looper.getMainLooper()) {
             @Override
@@ -212,9 +217,9 @@ public class TwentyoneActivity extends AppCompatActivity {
         // if all are fine
         if (!failFlag) {
             showFlipProgressDialog();
-            String id = databaseTwentyone.push().getKey();
+            uid = firebaseAuth.getCurrentUser().getUid();
             Twentyone twentyone = new Twentyone(dob,nominator,nominee,city,mobile_21,mailid,achieve,proudyear,ifget21,social_link,references,speakat_event,messageto_youth,attend_event);
-            databaseTwentyone.child(id).setValue(twentyone);
+            databaseTwentyone.child(uid).child(twentyone.getMobile_21()).setValue(twentyone);
         }
     }
 
@@ -289,6 +294,8 @@ public class TwentyoneActivity extends AppCompatActivity {
                 flip.dismiss();
                 Message message = mHandler.obtainMessage();
                 message.sendToTarget();
+                Intent intent = new Intent(getApplicationContext(),ApplyActivity.class);
+                startActivity(intent);
             }
         }, delayInMillis);
     }
