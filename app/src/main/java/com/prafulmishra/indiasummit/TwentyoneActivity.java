@@ -115,61 +115,73 @@ Button btnApply,btnSetDate;
         {
             failFlag = true;
             txtNominator.setError( "Field cannot be empty" );
+            txtNominator.requestFocus();
         }
         if( nominee.trim().length() == 0 )
         {
             failFlag = true;
             txtNominee.setError( "Field cannot be empty" );
+            txtNominee.requestFocus();
         }
         if( city.trim().length() == 0 )
         {
             failFlag = true;
             txtCity21.setError( "Field cannot be empty" );
+            txtCity21.requestFocus();
         }
         if( mobile_21.length() == 0 )
         {
             failFlag = true;
             txtMob.setError( "Field cannot be empty" );
+            txtMob.requestFocus();
         }
-        if( mailid.length() == 0 )
+        if(!isValidEmail(mailid) )
         {
             failFlag = true;
-            txtMail.setError( "Field cannot be empty" );
+            txtMail.setError( "Enter a valid email ID" );
+            txtMail.requestFocus();
         }
         if( achieve.length() == 0 )
         {
             failFlag = true;
             txtAchieve.setError( "Field cannot be empty" );
+            txtAchieve.requestFocus();
         }
         if( proudyear.length() == 0 )
         {
             failFlag = true;
             txtProudyear.setError( "Field cannot be empty" );
+            txtProudyear.requestFocus();
         }
         if( ifget21.length() == 0 )
         {
             failFlag = true;
             txtGet21.setError( "Field cannot be empty" );
+            txtGet21.requestFocus();
         }
         if( social_link.length() == 0 )
         {
             failFlag = true;
             txtSociallinks.setError( "Field cannot be empty" );
+            txtSociallinks.requestFocus();
         }
         if( references.length() == 0 )
         {
             failFlag = true;
             txtReference.setError( "Field cannot be empty" );
+            txtReference.requestFocus();
         }
         if( speakat_event.length() == 0 )
         {
             failFlag = true;
             txtSpeak.setError( "Field cannot be empty" );
+            txtSpeak.requestFocus();
         }
         if( messageto_youth.length() == 0 )
         {
             failFlag = true;
             txtMessagetoYouth.setError( "Field cannot be empty" );
+            txtMessagetoYouth.requestFocus();
         }
         // if all are fine
         if (!failFlag) {
@@ -236,5 +248,13 @@ Button btnApply,btnSetDate;
         int rbuttonId = rg21.getCheckedRadioButtonId();
         rbutton = (RadioButton)findViewById(rbuttonId);
         attend_event = rbutton.getText().toString();
+    }
+
+    public final static boolean isValidEmail(CharSequence target) {
+        if (target == null) {
+            return false;
+        } else {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+        }
     }
 }

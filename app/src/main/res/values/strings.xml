@@ -86,5 +86,11 @@ Some of the glimpse of the summit include:-\n\n
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="your_name">Your Name :</string>
+    <string name="emailid">Email ID :</string>
+    <string name="subject">Subject :</string>
+    <string name="message">Message :</string>
+    <string name="submit">Submit</string>
+    <string name="select_gmail">Please select the \"Gmail\" App !</string>
 
 </resources>

@@ -95,36 +95,43 @@ public class ParticipantActivity extends AppCompatActivity {
         {
             failFlag = true;
             partpntName.setError( "Field cannot be empty" );
+            partpntName.requestFocus();
         }
         if( city.trim().length() == 0 )
         {
             failFlag = true;
             txtCity.setError( "Field cannot be empty" );
+            txtCity.requestFocus();
         }
         if( college_org.length() == 0 )
         {
             failFlag = true;
             txtCol_org.setError( "Field cannot be empty" );
+            txtCol_org.requestFocus();
         }
         if( mobile.length() == 0 )
         {
             failFlag = true;
             txtMob.setError( "Field cannot be empty" );
+            txtMob.requestFocus();
         }
-        if( mailid.length() == 0 )
+        if(!isValidEmail(mailid))
         {
             failFlag = true;
-            txtMail.setError( "Field cannot be empty" );
+            txtMail.setError( "Enter a valid email ID" );
+            txtMail.requestFocus();
         }
         if( expect.length() == 0 )
         {
             failFlag = true;
             txtExpect.setError( "Field cannot be empty" );
+            txtExpect.requestFocus();
         }
         if( next_5years.length() == 0 )
         {
             failFlag = true;
             txtAltitude.setError( "Field cannot be empty" );
+            txtAltitude.requestFocus();
         }
         // if all are fine
         if (!failFlag) {
@@ -168,5 +175,13 @@ public class ParticipantActivity extends AppCompatActivity {
         int rbId = rdGroup.getCheckedRadioButtonId();
         rb = (RadioButton)findViewById(rbId);
         attend_event = rb.getText().toString();
+    }
+
+    public final static boolean isValidEmail(CharSequence target) {
+        if (target == null) {
+            return false;
+        } else {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+        }
     }
 }

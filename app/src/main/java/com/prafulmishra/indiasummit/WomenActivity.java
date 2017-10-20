@@ -22,6 +22,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.prafulmishra.indiasummit.data.Participant;
 import com.prafulmishra.indiasummit.data.WomenInTech;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class WomenActivity extends AppCompatActivity {
 Button btnApply;
     EditText txtName,txtCity,txtCol_org,txtMob,txtMail,txtOtherskill,txtWomenintech;
@@ -93,36 +96,44 @@ Button btnApply;
         {
             failFlag = true;
             txtName.setError( "Field cannot be empty" );
+            txtName.requestFocus();
         }
         if( city.trim().length() == 0 )
         {
             failFlag = true;
             txtCity.setError( "Field cannot be empty" );
+            txtCity.requestFocus();
         }
         if( col_org.length() == 0 )
         {
             failFlag = true;
             txtCol_org.setError( "Field cannot be empty" );
+            txtCol_org.requestFocus();
         }
         if( mobile_no.length() == 0 )
         {
             failFlag = true;
             txtMob.setError( "Field cannot be empty" );
+            txtMob.requestFocus();
         }
-        if( mail_id.length() == 0 )
+        if(!isValidEmail(mail_id))
         {
-            failFlag = true;
-            txtMail.setError( "Field cannot be empty" );
+                failFlag = true;
+                txtMail.setError( "Enter a valid email ID" );
+                txtMail.requestFocus();
+
         }
         if( other_skills.length() == 0 )
         {
             failFlag = true;
             txtOtherskill.setError( "Field cannot be empty" );
+            txtOtherskill.requestFocus();
         }
         if( word_aboutwitech.length() == 0 )
         {
             failFlag = true;
             txtWomenintech.setError( "Field cannot be empty" );
+            txtWomenintech.requestFocus();
         }
         // if all are fine
         if (!failFlag) {
@@ -185,4 +196,15 @@ Button btnApply;
             RadioButton rb4 = (RadioButton)findViewById(rbuttonId);
             stipend = rb4.getText().toString();
     }
+
+    // validating email id
+
+    public final static boolean isValidEmail(CharSequence target) {
+        if (target == null) {
+            return false;
+        } else {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+        }
+    }
+
 }

@@ -49,13 +49,11 @@ public class ApplyActivity extends AppCompatActivity
         toggle.syncState();
 
         btnPrtpnt = (Button) findViewById(R.id.btnPrtpnt);
-        btnVolunteer = (Button) findViewById(R.id.btnVolunteer);
         btnOn21 = (Button) findViewById(R.id.btnOn21);
         btnWomen = (Button) findViewById(R.id.btnWomen);
         imgQ1 = (ImageButton) findViewById(R.id.imgQ1);
-        imgQ2 = (ImageButton) findViewById(R.id.imgQ2);
-        imgQ3 = (ImageButton) findViewById(R.id.imgQ3);
-        imgQ4 = (ImageButton) findViewById(R.id.imgQ4);
+        imgQ2 = (ImageButton) findViewById(R.id.imgQ3);
+        imgQ3 = (ImageButton) findViewById(R.id.imgQ4);
 
         Typeface blockFonts = Typeface.createFromAsset(getAssets(),"fonts/gs_font.ttf");
         TextView txtSampleTxt = (TextView) findViewById(R.id.txtAppname);
@@ -63,7 +61,6 @@ public class ApplyActivity extends AppCompatActivity
 
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/graveside.ttf");
         btnPrtpnt.setTypeface(typeface);
-        btnVolunteer.setTypeface(typeface);
         btnOn21.setTypeface(typeface);
         btnWomen.setTypeface(typeface);
 
@@ -75,13 +72,6 @@ public class ApplyActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 prtpntReg();
-            }
-        });
-
-        btnVolunteer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                volntrReg();
             }
         });
 
@@ -108,6 +98,7 @@ public class ApplyActivity extends AppCompatActivity
             }
         });
 
+
         imgQ2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,13 +110,6 @@ public class ApplyActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 img3();
-            }
-        });
-
-        imgQ4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                img4();
             }
         });
     }
@@ -185,13 +169,6 @@ public class ApplyActivity extends AppCompatActivity
     }
 
 
-    private void volntrReg() {
-
-        Intent intent = new Intent(getApplicationContext(), VolunteerActivity.class);
-        startActivity(intent);
-
-    }
-
 
     private void img1() {
         final AlertDialog alertDialog = new AlertDialog.Builder(ApplyActivity.this).create();
@@ -221,35 +198,8 @@ public class ApplyActivity extends AppCompatActivity
 
     }
 
+
     private void img2() {
-        final AlertDialog alertDialog = new AlertDialog.Builder(ApplyActivity.this).create();
-
-        // Setting Dialog Title
-        alertDialog.setTitle("Volunteer");
-
-        // Setting Dialog Message
-        alertDialog.setMessage(getString(R.string.volun_short));
-
-        // Setting Icon to Dialog
-        alertDialog.setIcon(R.drawable.button);
-
-        //sets the property that the dialog can be cancelled or not
-
-        alertDialog.setCancelable(false);
-        // Setting OK Button
-        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                // continue with discard
-                alertDialog.dismiss();
-            }
-        });
-
-        // Showing Alert Message
-        alertDialog.show();
-
-    }
-
-    private void img3() {
         final AlertDialog alertDialog = new AlertDialog.Builder(ApplyActivity.this).create();
 
         // Setting Dialog Title
@@ -277,7 +227,7 @@ public class ApplyActivity extends AppCompatActivity
 
     }
 
-    private void img4() {
+    private void img3() {
         final AlertDialog alertDialog = new AlertDialog.Builder(ApplyActivity.this).create();
 
         // Setting Dialog Title
