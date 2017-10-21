@@ -92,5 +92,7 @@ Some of the glimpse of the summit include:-\n\n
     <string name="message">Message :</string>
     <string name="submit">Submit</string>
     <string name="select_gmail">Please select the \"Gmail\" App !</string>
+    <string name="spread_a_word">Spread a Word</string>
+    <string name="logout">Logout</string>
 
 </resources>
