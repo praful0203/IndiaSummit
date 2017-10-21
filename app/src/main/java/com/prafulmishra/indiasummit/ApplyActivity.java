@@ -35,11 +35,10 @@ import static java.lang.Float.valueOf;
 
 public class ApplyActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    Button btnPrtpnt, btnVolunteer, btnOn21, btnWomen;
-    ImageButton imgQ1, imgQ2, imgQ3, imgQ4;
+    Button btnPrtpnt, btnOn21, btnWomen;
+    ImageButton imgQ1, imgQ2, imgQ3;
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthListener;
-    LinearLayout loginlayout;
 
     @Override
     protected void onStart() {
@@ -80,7 +79,7 @@ public class ApplyActivity extends AppCompatActivity
         imgQ2 = (ImageButton) findViewById(R.id.imgQ3);
         imgQ3 = (ImageButton) findViewById(R.id.imgQ4);
 
-        Typeface blockFonts = Typeface.createFromAsset(getAssets(),"fonts/gs_font.ttf");
+        Typeface blockFonts = Typeface.createFromAsset(getAssets(),"fonts/roboto.ttf");
         TextView txtSampleTxt = (TextView) findViewById(R.id.txtAppname);
         txtSampleTxt.setTypeface(blockFonts);
 
@@ -287,7 +286,7 @@ public class ApplyActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
@@ -305,15 +304,20 @@ public class ApplyActivity extends AppCompatActivity
             startActivity(i);
             Toast.makeText(ApplyActivity.this, "Our Team", Toast.LENGTH_SHORT).show();
 
-        } else if (id == R.id.nav_rate) {
+        } else if (id == R.id.nav_spread) {
+           Intent i = new Intent(getApplicationContext(), SocialHandle.class);
+           startActivity(i);
+
+       } else if (id == R.id.nav_rate) {
            try {
                startActivity(new Intent(Intent.ACTION_VIEW,
                        Uri.parse("market://details?id=santase.radefffactory")));
            }
            catch (ActivityNotFoundException e)
            {
-               startActivity(new Intent(Intent.ACTION_VIEW,
+              startActivity(new Intent(Intent.ACTION_VIEW,
                        Uri.parse("https://play.google.com/store/app/details?id=santase.radefffactory")));
+               Toast.makeText(this, "Dummy Link!", Toast.LENGTH_SHORT).show();
            }
 
         }
@@ -325,8 +329,6 @@ public class ApplyActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    boolean doubleBackToExitPressedOnce;
 
 
 }
