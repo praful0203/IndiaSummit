@@ -138,18 +138,21 @@ public class ApplyActivity extends AppCompatActivity
         });
     }
 
-    long back_pressed_time,PERIOD=2000;
+    Boolean doubleBackToExitPressedOnce = false;
+
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            if (back_pressed_time + PERIOD > System.currentTimeMillis()) super.onBackPressed();
-            else
-                Toast.makeText(getBaseContext(), "Press once again to exit!", Toast.LENGTH_SHORT).show();
-            back_pressed_time = System.currentTimeMillis();
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+
+            System.exit(0);
+
+            return;
         }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click Back again to exit",
+                Toast.LENGTH_SHORT).show();
+
     }
 
     /*@Override
