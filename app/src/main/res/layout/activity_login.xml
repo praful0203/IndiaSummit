@@ -17,11 +17,11 @@
         <ImageButton
             android:id="@+id/imgGs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="90dp"
             android:background="@drawable/ripple_btnreg"
             android:elevation="6dp"
             android:layout_gravity="bottom"
-            android:src="@drawable/button"/>
+            android:src="@drawable/button" />
 
     </LinearLayout>
 

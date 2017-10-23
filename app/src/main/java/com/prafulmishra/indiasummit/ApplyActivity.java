@@ -300,12 +300,10 @@ public class ApplyActivity extends AppCompatActivity
         } else if (id == R.id.nav_contactus) {
             Intent i = new Intent(getApplicationContext(), ContactUs.class);
             startActivity(i);
-            Toast.makeText(ApplyActivity.this, "Contact Us", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_ourteam) {
             Intent i = new Intent(getApplicationContext(), OurTeam.class);
             startActivity(i);
-            Toast.makeText(ApplyActivity.this, "Our Team", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_spread) {
            Intent i = new Intent(getApplicationContext(), SocialHandle.class);

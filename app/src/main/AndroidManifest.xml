@@ -20,7 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -30,6 +31,7 @@
             android:name=".ParticipantActivity"
             android:label="@string/title_activity_participant"
             android:parentActivityName=".ApplyActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -38,6 +40,7 @@
         <activity
             android:name=".TwentyoneActivity"
             android:label="@string/title_activity_twentyone"
+            android:screenOrientation="portrait"
             android:parentActivityName=".ApplyActivity"
             android:theme="@style/AppTheme">
             <meta-data
@@ -47,6 +50,7 @@
         <activity
             android:name=".WomenActivity"
             android:label="@string/title_activity_scrolling"
+            android:screenOrientation="portrait"
             android:parentActivityName=".ApplyActivity"
             android:theme="@style/AppTheme">
             <meta-data
@@ -57,6 +61,7 @@
         <activity
             android:name=".ApplyActivity"
             android:label="@string/title_activity_apply"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity android:name=".ContactUs" />
         <activity android:name=".OurTeam" />
