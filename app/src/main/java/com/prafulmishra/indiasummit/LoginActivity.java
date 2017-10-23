@@ -56,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (firebaseAuth.getCurrentUser() != null) {
                     Intent intent = new Intent(getApplicationContext(), ApplyActivity.class);
                     startActivity(intent);
+                    finish();
 
 
                 }
@@ -137,23 +138,8 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
-    long back_pressed_time, PERIOD = 2000;
-
-    Boolean doubleBackToExitPressedOnce = false;
-
     @Override
     public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
-
-            System.exit(0);
-
-            return;
-        }
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click Back again to exit",
-                Toast.LENGTH_SHORT).show();
-
-
+        moveTaskToBack(true);
     }
 }
