@@ -7,15 +7,15 @@ import com.prafulmishra.indiasummit.WomenActivity;
  */
 
 public class WomenInTech {
-    String name,city,col_org,mobile_no,mail_id,other_skills,word_aboutwitech,html_knowledge,join_indiasummi,practice,stipend;
-    float tech_skills;
+    private String name,city,col_org,mobile_no,mail_id,other_skills,word_aboutwitech,html_knowledge,join_indiasummi,practice,stipend,time_added;
+    private float tech_skills;
 
     public WomenInTech()
     {
 
     }
 
-    public WomenInTech(String name, String city, String col_org, String mobile_no, String mail_id, String other_skills, String word_aboutwitech, String html_knowledge, String join_indiasummi, String practice, String stipend, float tech_skills) {
+    public WomenInTech(String name, String city, String col_org, String mobile_no, String mail_id, String other_skills, String word_aboutwitech, String html_knowledge, String join_indiasummi, String practice, String stipend, float tech_skills, String time_added) {
         this.name = name;
         this.city = city;
         this.col_org = col_org;
@@ -28,6 +28,7 @@ public class WomenInTech {
         this.practice = practice;
         this.stipend = stipend;
         this.tech_skills = tech_skills;
+        this.time_added = time_added;
     }
 
     public String getName() {
@@ -76,5 +77,9 @@ public class WomenInTech {
 
     public float getTech_skills() {
         return tech_skills;
+    }
+
+    public String getTime_added() {
+        return time_added;
     }
 }

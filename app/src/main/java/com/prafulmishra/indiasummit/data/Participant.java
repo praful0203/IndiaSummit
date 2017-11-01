@@ -5,24 +5,15 @@ package com.prafulmishra.indiasummit.data;
  */
 
 public class Participant {
-    String name;
-    String city;
-    String college_org;
-    String mobile;
-    String mailid;
-    String expect;
-    String events_attended;
-    Float tech_skills;
-    Float lead_skills;
-    String next_5years;
-    String attend_event;
+    private String name,city,college_org,mobile,mailid,expect,events_attended,next_5years,attend_event,time_added;
+    private Float tech_skills,lead_skills;
 
     public Participant()
     {
 
     }
 
-    public Participant(String name, String city, String college_org, String mobile, String mailid, String expect, String events_attended, Float tech_skills, Float lead_skills, String next_5years, String attend_event) {
+    public Participant(String name, String city, String college_org, String mobile, String mailid, String expect, String events_attended, Float tech_skills, Float lead_skills, String next_5years, String attend_event, String time_added) {
 
         this.name = name;
         this.city = city;
@@ -35,6 +26,7 @@ public class Participant {
         this.lead_skills = lead_skills;
         this.next_5years = next_5years;
         this.attend_event = attend_event;
+        this.time_added = time_added;
     }
 
 
@@ -80,5 +72,9 @@ public class Participant {
 
     public String getAttend_event() {
         return attend_event;
+    }
+
+    public String getTime_added() {
+        return time_added;
     }
 }

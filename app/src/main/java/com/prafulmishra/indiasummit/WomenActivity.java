@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -30,6 +31,7 @@ import com.prafulmishra.indiasummit.data.WomenInTech;
 import com.taishi.flipprogressdialog.FlipProgressDialog;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -39,7 +41,7 @@ import java.util.regex.Pattern;
 public class WomenActivity extends AppCompatActivity {
 Button btnApply;
     EditText txtName,txtCity,txtCol_org,txtMob,txtMail,txtOtherskill,txtWomenintech;
-    String name,city,col_org,mobile_no,mail_id,other_skills,word_aboutwitech,html_knowledge,join_indiasummi,practice,stipend,uid="";
+    String name,city,col_org,date,mobile_no,mail_id,other_skills,word_aboutwitech,html_knowledge,join_indiasummi,practice,stipend,uid="",time_added;
     float tech_skills;
     RadioGroup rdGroupHtml,rdGroupdates,rdGroupPractice,rdGroupStipend;
     RatingBar rtTechskills;
@@ -117,6 +119,11 @@ Button btnApply;
         other_skills = txtOtherskill.getText().toString();
         word_aboutwitech = txtWomenintech.getText().toString();
         tech_skills = rtTechskills.getRating();
+        time_added = Calendar.getInstance().getTime().toString();
+        android.icu.util.Calendar calendar = android.icu.util.Calendar.getInstance();
+        SimpleDateFormat mdformat = new SimpleDateFormat("dd-MM-yyyy");
+        date = mdformat.format(calendar.getTime());
+
 
         boolean failFlag = false;
 
@@ -167,8 +174,8 @@ Button btnApply;
         if (!failFlag) {
             showFlipProgressDialog();
             uid = firebaseAuth.getCurrentUser().getUid();
-            WomenInTech womenInTech = new WomenInTech(name,city,col_org,mobile_no,mail_id,other_skills,word_aboutwitech,html_knowledge,join_indiasummi,practice,stipend,tech_skills);
-            databaseWomen.child(uid).child(womenInTech.getMobile_no()).setValue(womenInTech);
+            WomenInTech womenInTech = new WomenInTech(name,city,col_org,mobile_no,mail_id,other_skills,word_aboutwitech,html_knowledge,join_indiasummi,practice,stipend,tech_skills,time_added);
+            databaseWomen.child(date).child(uid).child(womenInTech.getMobile_no()).setValue(womenInTech);
         }
     }
 

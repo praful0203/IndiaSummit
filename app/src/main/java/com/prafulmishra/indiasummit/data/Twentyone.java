@@ -6,14 +6,14 @@ package com.prafulmishra.indiasummit.data;
 
 public class Twentyone {
 
-    String dob,nominator,nominee,city,mobile_21,mailid,achieve,proudyear,ifget21,social_link,references,speakat_event,messageto_youth,attend_event;
+    private String dob,nominator,nominee,city,mobile_21,mailid,achieve,proudyear,ifget21,social_link,references,speakat_event,messageto_youth,attend_event,time_added;
 
     public Twentyone()
     {
 
     }
 
-    public Twentyone(String dob, String nominator, String nominee, String city, String mobile_21, String mailid, String achieve, String proudyear, String ifget21, String social_link, String references, String speakat_event, String messageto_youth, String attend_event) {
+    public Twentyone(String dob, String nominator, String nominee, String city, String mobile_21, String mailid, String achieve, String proudyear, String ifget21, String social_link, String references, String speakat_event, String messageto_youth, String attend_event, String time_added) {
         this.dob = dob;
         this.nominator = nominator;
         this.nominee = nominee;
@@ -28,6 +28,7 @@ public class Twentyone {
         this.speakat_event = speakat_event;
         this.messageto_youth = messageto_youth;
         this.attend_event = attend_event;
+        this.time_added = time_added;
     }
 
     public String getDob() {
@@ -84,5 +85,9 @@ public class Twentyone {
 
     public String getAttend_event() {
         return attend_event;
+    }
+
+    public String getTime_added() {
+        return time_added;
     }
 }

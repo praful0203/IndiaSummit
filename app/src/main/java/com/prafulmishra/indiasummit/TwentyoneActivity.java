@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,6 +17,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -32,7 +34,9 @@ import com.prafulmishra.indiasummit.data.Twentyone;
 import com.taishi.flipprogressdialog.FlipProgressDialog;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -44,7 +48,7 @@ public class TwentyoneActivity extends AppCompatActivity {
     Button btnApply,btnSetDate;
     List<Integer> ImageList = new ArrayList<>();
     EditText txtNominator,txtNominee,txtCity21,txtMob,txtMail,txtAchieve,txtProudyear,txtGet21,txtSociallinks,txtReference,txtSpeak,txtMessagetoYouth;
-    String uid=" ",dob,nominator,nominee,city,mobile_21,mailid,achieve,proudyear,ifget21,social_link,references,speakat_event,messageto_youth,attend_event;
+    String uid=" ",date,dob,nominator,time_added,nominee,city,mobile_21,mailid,achieve,proudyear,ifget21,social_link,references,speakat_event,messageto_youth,attend_event;
     RadioGroup rg21;
     RadioButton rbutton;
     Handler mHandler;
@@ -139,6 +143,10 @@ public class TwentyoneActivity extends AppCompatActivity {
         references = txtReference.getText().toString();
         speakat_event = txtSpeak.getText().toString();
         messageto_youth = txtMessagetoYouth.getText().toString();
+        time_added = Calendar.getInstance().getTime().toString();
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat mdformat = new SimpleDateFormat("dd-MM-yyyy");
+        date = mdformat.format(calendar.getTime());
 
         boolean failFlag = false;
 
@@ -218,8 +226,8 @@ public class TwentyoneActivity extends AppCompatActivity {
         if (!failFlag) {
             showFlipProgressDialog();
             uid = firebaseAuth.getCurrentUser().getUid();
-            Twentyone twentyone = new Twentyone(dob,nominator,nominee,city,mobile_21,mailid,achieve,proudyear,ifget21,social_link,references,speakat_event,messageto_youth,attend_event);
-            databaseTwentyone.child(uid).child(twentyone.getMobile_21()).setValue(twentyone);
+            Twentyone twentyone = new Twentyone(dob,nominator,nominee,city,mobile_21,mailid,achieve,proudyear,ifget21,social_link,references,speakat_event,messageto_youth,attend_event,time_added);
+            databaseTwentyone.child(date).child(uid).child(twentyone.getMobile_21()).setValue(twentyone);
         }
     }
 

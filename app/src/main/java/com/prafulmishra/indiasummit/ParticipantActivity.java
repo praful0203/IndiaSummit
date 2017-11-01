@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.icu.text.SimpleDateFormat;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,6 +33,7 @@ import com.prafulmishra.indiasummit.data.Participant;
 import com.taishi.flipprogressdialog.FlipProgressDialog;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -45,7 +47,7 @@ public class ParticipantActivity extends AppCompatActivity {
     RadioGroup rdGroup;
     Handler mHandler;
     RadioButton rb;
-    String name,city,college_org,mobile,mailid,expect,events_attended,next_5years,attend_event,uid=" ";
+    String name,city,college_org,date,mobile,mailid,expect,events_attended,next_5years,attend_event,uid=" ",time_added;
     Float tech_skills,lead_skills;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference,databaseParticipant;
@@ -123,6 +125,11 @@ public class ParticipantActivity extends AppCompatActivity {
         next_5years = txtAltitude.getText().toString();
         tech_skills = rtTech.getRating();
         lead_skills = rtLead.getRating();
+        time_added = Calendar.getInstance().getTime().toString();
+        android.icu.util.Calendar calendar = android.icu.util.Calendar.getInstance();
+        SimpleDateFormat mdformat = new SimpleDateFormat("dd-MM-yyyy");
+        date = mdformat.format(calendar.getTime());
+
 
         boolean failFlag = false;
 
@@ -172,8 +179,8 @@ public class ParticipantActivity extends AppCompatActivity {
         if (!failFlag) {
             showFlipProgressDialog();
             uid = firebaseAuth.getCurrentUser().getUid();
-            Participant participant = new Participant(name,city,college_org,mobile,mailid,expect,events_attended,tech_skills,lead_skills,next_5years,attend_event);
-            databaseParticipant.child(uid).child(participant.getMobile()).setValue(participant);
+            Participant participant = new Participant(name,city,college_org,mobile,mailid,expect,events_attended,tech_skills,lead_skills,next_5years,attend_event,time_added);
+            databaseParticipant.child(date).child(uid).child(participant.getMobile()).setValue(participant);
         }
     }
 
