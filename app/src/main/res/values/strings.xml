@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">India Summit</string>
+    <string name="app_name">GirlScript Summit</string>
     <string name="title">Girlscript</string>
     <string name="participate">Participant</string>
     <string name="volunteer">Volunteer</string>
@@ -81,7 +81,7 @@ Some of the glimpse of the summit include:-\n\n
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="about_us_gs">\tGirlScript is a non-profit organization and a community that empowers women and introduces them to the various opportunities available in the tech industry. We establish GirlScript Chapters in different colleges and universities and help them via online and offline training. GirlScript Foundation is registered as a non-profit organization under section-8 of companies act and was founded on 12th of February, 2017.\n\n We believe in ‘Equality in Tech’ rather than just ‘Women in Tech’. We encourage everyone to participate in our events irrespective of age, profession, gender etc.Our main aim is to promote the idea of programming and technology within tier-two and tier-three cities of India.\n\n We have just started in February 2017 with an aim to change Indian Education System of rote learning and marks based system. We are always looking for leaders who share common thoughts and have different technical and non-technical skills, to support our organization. Within two months of launching our project, we were able to establish GirlScript Chapters in three different cities of India and get more than a thousand followers on different social media platforms.\n\n GirlScript has been selected by Mozilla for Open Leadership Training 2017 and we strive to make GirlScript a biggest online and offline platform for sharing ideas as well as opportunities.\n\n</string>
-    <string name="india_summit">India Summit</string>
+    <string name="india_summit">GirlScript Summit</string>
     <string name="title_activity_apply">ApplyActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

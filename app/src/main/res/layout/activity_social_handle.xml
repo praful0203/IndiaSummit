@@ -1,77 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/social_bg"
-    tools:context="com.prafulmishra.indiasummit.SocialHandle">
+    tools:context=".SocialHandle">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="15dp"
         android:orientation="vertical">
 
         <ImageView
             android:layout_width="260dp"
             android:layout_height="260dp"
             android:layout_gravity="center"
-            android:layout_margin="15dp"
+            android:layout_margin="30dp"
             android:src="@drawable/gs_logo" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="60dp"
-            android:orientation="vertical"
-            android:gravity="center"
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center">
 
-            <RelativeLayout
+            <TextView
+                android:id="@+id/lblShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:text="Share App"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="30dp">
+
+            <ImageButton
+                android:id="@+id/imgFb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                android:background="@drawable/facebook"
+                android:elevation="6dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+
+            <ImageButton
+                android:id="@+id/imgInsta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/instagram"
+                android:elevation="6dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/imgFb"
+                android:layout_marginStart="52dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp">
-
-                <ImageButton
-                    android:id="@+id/imgFb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/facebook"
-                    android:elevation="6dp" />
-
-                <ImageButton
-                    android:id="@+id/imgInsta"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/instagram"
-                    android:elevation="6dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingTop="40dp">
+                android:paddingTop="40dp"
+                android:padding="15dp">
 
                 <ImageButton
                     android:id="@+id/imgTwitter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/twitter"
-                    android:elevation="6dp" />
+                    android:elevation="6dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="80dp" />
 
                 <ImageButton
                     android:id="@+id/imgLinkedin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
                     android:background="@drawable/linkedin"
-                    android:elevation="6dp" />
+                    android:elevation="6dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imgTwitter"
+                    android:layout_marginStart="54dp" />
             </RelativeLayout>
+
+
 
 
         </LinearLayout>
@@ -79,4 +100,3 @@
     </LinearLayout>
 
 
-</LinearLayout>

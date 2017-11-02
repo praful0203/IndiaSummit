@@ -49,6 +49,50 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590651686906:android:f95c4d4efab1dee9",
+        "android_client_info": {
+          "package_name": "com.prafulmishra.girlscriptsummit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "590651686906-5thm8p3lnim1r7o8e6e6b5l10u2dc054.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.prafulmishra.girlscriptsummit",
+            "certificate_hash": "66a7b440cb7c5d5ad31208a82dd088b30d71aa0c"
+          }
+        },
+        {
+          "client_id": "590651686906-59s12t3rcs501dok1vesliqhi3eqtpu6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMn7P8EBbaZmskHjMX5_jmEZbgBZOy7AM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "590651686906-59s12t3rcs501dok1vesliqhi3eqtpu6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

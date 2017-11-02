@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@android:color/white"
     android:id="@+id/drawerLayout1"
-    tools:context="com.prafulmishra.indiasummit.ApplyActivity">
+    tools:context="com.prafulmishra.girlscriptsummit.ApplyActivity">
 
 
 

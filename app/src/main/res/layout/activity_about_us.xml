@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/about_us"
-    tools:context="com.prafulmishra.indiasummit.ApplyActivity">
+    tools:context=".ApplyActivity">
 
     <ImageView
         android:layout_width="120dp"
