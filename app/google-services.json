@@ -1,65 +1,21 @@
 {
   "project_info": {
-    "project_number": "590651686906",
-    "firebase_url": "https://indiasummit-12536.firebaseio.com",
-    "project_id": "indiasummit-12536",
-    "storage_bucket": "indiasummit-12536.appspot.com"
+    "project_number": "533006322764",
+    "firebase_url": "https://girlscript-summit.firebaseio.com",
+    "project_id": "girlscript-summit",
+    "storage_bucket": "girlscript-summit.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:590651686906:android:0db7a22ae11a87b8",
-        "android_client_info": {
-          "package_name": "com.prafulmishra.indiasummit"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "590651686906-6ib9pvdnfkg0vcme4c38gfgk7fjmgduf.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.prafulmishra.indiasummit",
-            "certificate_hash": "66a7b440cb7c5d5ad31208a82dd088b30d71aa0c"
-          }
-        },
-        {
-          "client_id": "590651686906-59s12t3rcs501dok1vesliqhi3eqtpu6.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCMn7P8EBbaZmskHjMX5_jmEZbgBZOy7AM"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "590651686906-59s12t3rcs501dok1vesliqhi3eqtpu6.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:590651686906:android:f95c4d4efab1dee9",
+        "mobilesdk_app_id": "1:533006322764:android:f95c4d4efab1dee9",
         "android_client_info": {
           "package_name": "com.prafulmishra.girlscriptsummit"
         }
       },
       "oauth_client": [
         {
-          "client_id": "590651686906-5thm8p3lnim1r7o8e6e6b5l10u2dc054.apps.googleusercontent.com",
+          "client_id": "533006322764-mn4ddnnsgjmi8tv58hht7vpjok19dro5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.prafulmishra.girlscriptsummit",
@@ -67,13 +23,13 @@
           }
         },
         {
-          "client_id": "590651686906-59s12t3rcs501dok1vesliqhi3eqtpu6.apps.googleusercontent.com",
+          "client_id": "533006322764-rit6rkm0n3b0e2ga1jljo6eck8bkglhh.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCMn7P8EBbaZmskHjMX5_jmEZbgBZOy7AM"
+          "current_key": "AIzaSyDmmVht0xNrJtpn8D1Is8biGjIZLBNJhvs"
         }
       ],
       "services": {
@@ -84,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "590651686906-59s12t3rcs501dok1vesliqhi3eqtpu6.apps.googleusercontent.com",
+              "client_id": "533006322764-rit6rkm0n3b0e2ga1jljo6eck8bkglhh.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
