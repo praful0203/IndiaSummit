@@ -27,6 +27,7 @@ import com.prafulmishra.girlscriptsummit.data.WomenInTech;
 import com.taishi.flipprogressdialog.FlipProgressDialog;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -116,7 +117,9 @@ Button btnApply;
         word_aboutwitech = txtWomenintech.getText().toString();
         tech_skills = rtTechskills.getRating();
         time_added = Calendar.getInstance().getTime().toString();
-        date = DateFormat.getDateInstance().format(new Date());
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        date = df.format(c.getTime());
 
 
         boolean failFlag = false;

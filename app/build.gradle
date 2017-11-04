@@ -6,7 +6,7 @@ android {
             keyAlias 'key01'
             keyPassword 'gsIndia17'
             storeFile file('J:/IndiaSummit/key/gskey.jks')
-            storePassword 'is2K17girlscript'
+            storePassword 'summit2K17'
         }
     }
     compileSdkVersion 26

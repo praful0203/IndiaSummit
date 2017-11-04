@@ -27,6 +27,7 @@ import com.prafulmishra.girlscriptsummit.data.Participant;
 import com.taishi.flipprogressdialog.FlipProgressDialog;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -122,7 +123,9 @@ public class ParticipantActivity extends AppCompatActivity {
         tech_skills = rtTech.getRating();
         lead_skills = rtLead.getRating();
         time_added = Calendar.getInstance().getTime().toString();
-        date = DateFormat.getDateInstance().format(new Date());
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        date = df.format(c.getTime());
 
         boolean failFlag = false;
 

@@ -28,7 +28,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.prafulmishra.girlscriptsummit.data.Twentyone;
 import com.taishi.flipprogressdialog.FlipProgressDialog;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Timer;
@@ -135,7 +138,9 @@ public class TwentyoneActivity extends AppCompatActivity {
         speakat_event = txtSpeak.getText().toString();
         messageto_youth = txtMessagetoYouth.getText().toString();
         time_added = java.util.Calendar.getInstance().getTime().toString();
-        date = java.text.DateFormat.getDateInstance().format(new Date());
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        date = df.format(c.getTime());
 
         boolean failFlag = false;
 

@@ -103,6 +103,7 @@ public class LoginActivity extends AppCompatActivity {
             } else {
                 // Google Sign In failed, update UI appropriately
                 // ...
+               // Toast.makeText(this, ""+result.getStatus(), Toast.LENGTH_SHORT).show();
                 Toast.makeText(this, "Authentication Went Wrong", Toast.LENGTH_SHORT).show();
             }
         }
