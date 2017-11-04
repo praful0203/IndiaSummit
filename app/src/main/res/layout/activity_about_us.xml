@@ -11,14 +11,19 @@
         android:layout_margin="10dp"
         android:layout_gravity="center"
         android:src="@drawable/gs_logo"/>
-    <TextView
-        android:scrollbars="vertical"
-        android:maxLines="40"
-        android:id="@+id/about_gs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/about_us_gs"
-        android:textColor="@color/colorWhite"
-        android:layout_margin="10dp"
-        android:textSize="18sp" />
+ <ScrollView
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+     <TextView
+         android:scrollbars="vertical"
+         android:maxLines="40"
+         android:id="@+id/about_gs"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/about_us_gs"
+         android:textColor="@color/colorWhite"
+         android:layout_margin="10dp"
+         android:textSize="18sp" />
+ </ScrollView>
+
 </LinearLayout>

@@ -18,6 +18,7 @@ android {
         versionName '2.1.0'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.initialkey
+        versionCode 2
     }
     buildTypes {
         release {

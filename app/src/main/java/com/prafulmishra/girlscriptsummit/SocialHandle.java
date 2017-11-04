@@ -7,12 +7,13 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class SocialHandle extends AppCompatActivity {
     ImageButton imgFb,imgInsta,imgLinkedin,imgTwitter;
-    TextView lblShare;
+    Button btnShare;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +23,9 @@ public class SocialHandle extends AppCompatActivity {
         imgInsta = (ImageButton)findViewById(com.prafulmishra.girlscriptsummit.R.id.imgInsta);
         imgLinkedin = (ImageButton)findViewById(com.prafulmishra.girlscriptsummit.R.id.imgLinkedin);
         imgTwitter = (ImageButton)findViewById(com.prafulmishra.girlscriptsummit.R.id.imgTwitter);
-        lblShare = (TextView) findViewById(com.prafulmishra.girlscriptsummit.R.id.lblShare);
+        btnShare = (Button) findViewById(com.prafulmishra.girlscriptsummit.R.id.btnShare);
 
-        lblShare.setOnClickListener(new View.OnClickListener() {
+        btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
