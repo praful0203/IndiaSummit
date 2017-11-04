@@ -309,7 +309,7 @@ public class ApplyActivity extends AppCompatActivity
                        Uri.parse("http://play.google.com/store/apps/details?id=com.tdx.evan.zwskin.minimalist")));
                Toast.makeText(this, "Dummy Link!", Toast.LENGTH_SHORT).show();
            }*/
-           final String appPackageName = "com.tdx.evan.zwskin.minimalist"; // getPackageName() from Context or Activity object
+           final String appPackageName = "com.prafulmishra.girlscriptsummit"; // getPackageName() from Context or Activity object
            try {
                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
            } catch (android.content.ActivityNotFoundException anfe) {

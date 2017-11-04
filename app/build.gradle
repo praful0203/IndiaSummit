@@ -3,9 +3,9 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         initialkey {
-            keyAlias 'keyapp'
-            keyPassword 'girlscript2k17'
-            storeFile file('J:/IndiaSummit/key/finalone.jks')
+            keyAlias 'key01'
+            keyPassword 'gsIndia17'
+            storeFile file('J:/IndiaSummit/key/gskey.jks')
             storePassword 'is2K17girlscript'
         }
     }
@@ -15,9 +15,9 @@ android {
         applicationId 'com.prafulmishra.girlscriptsummit'
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 1
-        versionName '1.1.0'
+        versionName '2.1.0'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.initialkey
     }
     buildTypes {
         release {

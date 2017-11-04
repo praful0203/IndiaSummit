@@ -108,7 +108,7 @@ public class TwentyoneActivity extends AppCompatActivity {
             public void handleMessage(Message message) {
                 // This is where you do your work in the UI thread.
                 // Your worker tells you in the message what to do.
-                Toast.makeText(TwentyoneActivity.this, "Registration Successful !\nFor further queries visit https://gsindiasummit.com", Toast.LENGTH_LONG).show();
+                Toast.makeText(TwentyoneActivity.this, "Registration Successful !\nWe'll mail you further details soon\nFor further queries visit https://gsindiasummit.com", Toast.LENGTH_LONG).show();
             }
         };
 

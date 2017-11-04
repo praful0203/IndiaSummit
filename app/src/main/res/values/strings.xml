@@ -4,15 +4,15 @@
     <string name="participate">Participant</string>
     <string name="volunteer">Volunteer</string>
     <string name="on21">21 on 21 Awards</string>
-    <string name="women">Women World Record</string>
+    <string name="women">Women Record</string>
     <string name="title_activity_participant">ParticipantActivity</string>
     <string name="action_settings">Settings</string>
     <string name="name">Name:</string>
     <string name="city">City:</string>
     <string name="college_organization">College/Organization:</string>
-    <string name="mobiile_no">Mobile No. : (Active Whatsapp)</string>
+    <string name="mobiile_no">Contact No. (Active on Social Media): </string>
     <string name="email_id">Email-id:</string>
-    <string name="q1_prtpnt">What are you expecting from GirlScript India Summit?</string>
+    <string name="q1_prtpnt">What are you expecting from GirlScript Summit?</string>
     <string name="q2_prtpnt">What all events have you attended earlier or organised (if any)?</string>
     <string name="tech_skills">Rate your Technical Skills :</string>
     <string name="leadership_skills">Rate your Leadership Skills :</string>
@@ -25,7 +25,7 @@
     <string name="yes">Yes</string>
     <string name="title_activity_volunteer">VolunteerActivity</string>
     <string name="volunteership">We are looking for volunteers for the most happening summit around the nation.
-Girlscript summit is a two day event  consisting of various learning sessions alongside fun filled activities and so on..
+Girlscript summit is a two day event consisting of various learning sessions alongside fun filled activities and so on..
 The major aim behind this summit is to eradicate  gender inequality and empower women.
 Some of the glimpse of the summit include:-\n\n
 1. Various technical session by the industry experts.\n\n
@@ -36,17 +36,12 @@ Some of the glimpse of the summit include:-\n\n
 6.Calling successful programmers , women etc. To share their views and success stories.\n\n
 7.Collecting Resume/CV of college students to match them with an internship.\n\n
 8.Witnessing a live world record.\n</string>
-    <string name="parti_short">Attend the Girlscript\'s 1st India Summit 2K17 at Ahmedabad!</string>
-    <string name="volun_short">Become a Volunteer and contribute to India\'s 1st Women-oriented fest!</string>
-    <string name="women_short">Be a part of World Record! Come and join with us! (Only for women)</string>
+    <string name="parti_short">Attend the Girlscript\'s 1st Summit 2K17 at Ahmedabad!</string>
+    <string name="volun_short">Become a Volunteer and contribute to 1st Women-oriented fest!</string>
+    <string name="women_short">Be a part of Women Record! Come and join with us! (Only for women)</string>
     <string name="participant">This is an Invite only event, this registration does not confirm your seats. After the application deadline, you will receive a confirmation mail from our side</string>
     <string name="volunteer_q1">Team you want to be a part of :</string>
-    <string name="whatapp_no">Whatsapp number :</string>
-    <string name="graphic_designing">Graphic Designing</string>
-    <string name="event_management">Event Management</string>
-    <string name="content_writing">Content Writing</string>
-    <string name="social_media_marketing">Social media Marketing</string>
-    <string name="hospitality_and_management">Hospitality and Management</string>
+    <string name="whatapp_no">Contact number :</string>
     <string name="your_past_experience">Your Past Experience :</string>
     <string name="do_you_need_travel_allowance">Do you need Travel allowance ?</string>
     <string name="do_you_need_accomodation">Do you need Accommodation ?</string>
@@ -63,9 +58,9 @@ Some of the glimpse of the summit include:-\n\n
     <string name="please_include_the_names_of_2_people_their_contact_details_as_a_reference_for_this_award">Please include the names of 2 people, their contact details as a reference for this award</string>
     <string name="presence">Will you be able to join us in Ahemdabad to receive your award?</string>
     <string name="like_to_speak">Would you like to speak in our event. If you would like to speak then on what you would be talking about?</string>
-    <string name="message_to_youth">What is your opinion on Young India and their current situation?</string>
+    <string name="message_to_youth">What is your opinion on Youth of nation and their current situation?</string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
-    <string name="women_info">Be a part of World Record! Come and join us! (Only for women)</string>
+    <string name="women_info">Be a part of Women Record! Come and join us! (Only for women)</string>
     <string name="women_html">Do you know HTML?</string>
     <string name="other_things">What all other things do you know?</string>
     <string name="women_in_tech">How is to be a women in technology in India?</string>
@@ -80,7 +75,7 @@ Some of the glimpse of the summit include:-\n\n
     <string name="rate_us">Rate us</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <string name="about_us_gs">\tGirlScript is a non-profit organization and a community that empowers women and introduces them to the various opportunities available in the tech industry. We establish GirlScript Chapters in different colleges and universities and help them via online and offline training. GirlScript Foundation is registered as a non-profit organization under section-8 of companies act and was founded on 12th of February, 2017.\n\n We believe in ‘Equality in Tech’ rather than just ‘Women in Tech’. We encourage everyone to participate in our events irrespective of age, profession, gender etc.Our main aim is to promote the idea of programming and technology within tier-two and tier-three cities of India.\n\n We have just started in February 2017 with an aim to change Indian Education System of rote learning and marks based system. We are always looking for leaders who share common thoughts and have different technical and non-technical skills, to support our organization. Within two months of launching our project, we were able to establish GirlScript Chapters in three different cities of India and get more than a thousand followers on different social media platforms.\n\n GirlScript has been selected by Mozilla for Open Leadership Training 2017 and we strive to make GirlScript a biggest online and offline platform for sharing ideas as well as opportunities.\n\n</string>
+    <string name="about_us_gs">\tGirlScript is a non-profit organization and a community that empowers women and introduces them to the various opportunities available in the tech industry. We establish GirlScript Chapters in different colleges and universities and help them via online and offline training. GirlScript Foundation is registered as a non-profit organization under section-8 of companies act and was founded on 12th of February, 2017.\n\n We believe in ‘Equality in Tech’ rather than just ‘Women in Tech’. We encourage everyone to participate in our events irrespective of age, profession, gender etc.Our main aim is to promote the idea of programming and technology within tier-two and tier-three cities of India.\n\n We have just started in February 2017 with an aim to change Indian Education System of rote learning and marks based system. We are always looking for leaders who share common thoughts and have different technical and non-technical skills, to support our organization. Within two months of launching our project, we were able to establish GirlScript Chapters in three different cities of India and get more than a thousand followers on different social media platforms.\n</string>
     <string name="india_summit">GirlScript Summit</string>
     <string name="title_activity_apply">ApplyActivity</string>
 
